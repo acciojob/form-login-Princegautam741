@@ -1,9 +1,8 @@
-it('should allow a user to input their first and last name and submit the form', () => {
-    cy.visit(baseUrl);
-    cy.get('input[name="fname"]').type('John');
-    cy.get('input[name="lname"]').type('Doe');
-    cy.get('input[type="submit"]').click();
-    cy.on('window:alert', str => {
-        expect(str).to.equal('First name: John\nLast name: Doe');
-    });
-});
+function getFormvalue() {
+    // Get the values of the first and last name from the form
+    var firstName = document.forms["form1"]["fname"].value;
+    var lastName = document.forms["form1"]["lname"].value;
+
+    // Display an alert with the user's first and last name
+    alert('First name: ' + firstName + '\nLast name: ' + lastName);
+}
